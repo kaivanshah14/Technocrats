@@ -1,0 +1,34 @@
+//	public static void task4(ArrayList<Customer> customerList,String areaCode) {
+//		int i=0;
+//		ArrayList<Customer> cust = new ArrayList<>();
+//		for(Customer customer:customerList) {
+//			if(customerList.get(i).getCustomerAreaCode().equals(areaCode)) {
+//				cust.add(customerList.get(i));
+//			}
+//			i++;
+//		}
+//		map.put(areaCode, cust);
+//		System.out.println(map);
+//	}
+
+
+//public static void task4(ArrayList<Customer> customerList) {
+////	ArrayList<Customer> custList1 = new ArrayList<Customer>();
+////	for(int i=0; i<customerList.size() && i+1<customerList.size(); i++) {
+////		if(customerList.get(i).getCustomerAreaCode().equals(customerList.get(i+1).getCustomerAreaCode())) {
+////			custList1.add(customerList.get(i+1));
+////		}
+////	}
+//	String s;
+//	for(int i=0; i<customerList.size(); i++) {
+//		ArrayList<Customer> custList1 = new ArrayList<Customer>();
+//		if(!map.containsKey(customerList.get(i).getCustomerAreaCode()))
+//			s = customerList.get(i).getCustomerAreaCode(); //A1
+//		for(int j=i+1; j<customerList.size()-1; j++) {
+//			if(customerList.get(j).getCustomerAreaCode().equals(customerList.get(i)))
+//				custList1.add(customerList.get(j));
+//		}
+//		map.put(s, custList1);
+//	}
+//}
+	
