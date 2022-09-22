@@ -1,0 +1,40 @@
+##TECHNOCRATS MINI PROJECT 1: 22/09/22
+
+
+Mini Project using Java and Collections:  Electricity Bill generator
+Create Customer class with following details: 
+customerId, customerName, customerAreaCode, numberofUnitsConsumed, totalBill
+
+The total bill is calculated based on the following formula 
+
+No. of units consumed	Rate
+Upto 100	0.50
+101-150	0.75
+Above 150	1
+
+175
+100*0.50 + 50 *0.75 +25*1
+
+300
+100*0.5 + 50*.75 + 150*1
+
+Task1: 
+The program should facilitate the input values from the user for the attributes of the Customer. Also it should facilitate the N number of customers which should continue till user do not want to continue to register the customers. 
+
+Task2: 
+Create the CustomerUtility class to provide following utility functions: 
+1.Display all the customers with their bill, with all the other details. 
+2.Display the customers sorted in the descending order of their bill
+3.Display the details of the customers in the given customerAreaCode.
+
+Task3: 
+1.Implement the logic to serialize and deserialize all the objects.
+
+Task4:
+Create the different map with type<String, List<Customers>, where the key denotes the area code. The map should contain the entries matching with that areacode.  
+
+Create a class (1): Done
+Task 1 (1): Kaivan
+Task 2 (3): 1. Done 2. Sandipt 3. Siddhart
+Task 3 (1): Hammad & Kajal
+Task 4 (1): Abhishek & Gauri
