@@ -5,9 +5,20 @@ public class Main {
 		Customer c1 = new Customer(2, "B", "102", 120);
 		Customer c2 = new Customer(3, "C", "103", 357);
 		Customer c3 = new Customer(3, "C", "103", -3);
+		//hammad commit-1
+		Customer c4 = new Customer(5, "E", "105", 0);
+		
+		
+		
 		System.out.println(c.calculateTotalBill() + " " + c);
 		System.out.println(c1.calculateTotalBill() + " " + c1);
 		System.out.println(c2.calculateTotalBill() + " " + c2);
 		System.out.println(c3.calculateTotalBill() + " " + c3);
+		System.out.println(c4.calculateTotalBill() + " " + c4);
+		
+		
+		
+		
+	
 	}
 }
