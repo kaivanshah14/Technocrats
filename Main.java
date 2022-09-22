@@ -7,6 +7,14 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args)  {
 		
+		System.out.println();
+		System.out.println("*****************************************{  Electricity Bill Generator   }*******************************************************");
+		System.out.println();
+		System.out.println("                                                ( by Team 5 )                                                                    ");
+		System.out.println();
+		System.out.println("...............................................Team Technocrats...................................................................");
+		System.out.println();
+		
 		
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the number of Customers: ");
