@@ -1,0 +1,11 @@
+public static void averageBill() {
+		
+		CallableStatement cs8 = con.prepareCall("{call average_total_bill(?,?)}");
+		
+		cs8.setString(1, "Domestic");
+		cs8.registerOutParameter(2, java.sql.Types.DECIMAL);
+		cs8.execute();
+		
+		System.out.println(cs8.getBigDecimal(2));
+		
+	}
