@@ -1,0 +1,45 @@
+//		CallableStatement cs = con.prepareCall("{call insertCustomerData(?,?,?,?)}");
+//		// Insert into table Customer
+//		for (Customer c : customerList) {
+//			cs.setLong(1, c.getCustomerId());
+//			cs.setString(2, c.getCustomerName());
+//			cs.setString(3, c.getCustomerType());
+//			cs.setString(4, c.getCustomerAreaCode());
+//			cs.addBatch();
+//		}
+//		cs.executeBatch();
+//		
+//		System.out.println("Displaying Customer from DB");
+//		CallableStatement cs1 = con.prepareCall("{call allCustomerDetails()}");
+//		cs1.execute();
+//		ResultSet rs = cs1.getResultSet();
+//		while (rs.next()) {
+//			System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+//		}
+//		
+////		Statement s = con.createStatement();
+////		ResultSet rs = s.executeQuery("select * from customer");
+////		while (rs.next()) {
+////			System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+////		}
+//
+//		System.out.println("\n------------\n");
+//
+//		CallableStatement cs2 = con.prepareCall("{call insertConsumptionData(?,?,?,?)}");
+//		System.out.println(customerList);
+//		for (Customer c : customerList) {
+//			cs2.setString(1, c.getMonth().toString());
+//			cs2.setLong(2, c.getNumberofUnitsConsumed());
+//			cs2.setDouble(3, c.getTotalBill());
+//			cs2.setLong(4, c.getCustomerId());
+//			cs2.addBatch();
+//		}
+//		cs2.executeBatch();
+//
+//		System.out.println("Displaying Consumption from DB");
+//		Statement s2 = con.createStatement();
+//		ResultSet rs2 = s2.executeQuery("select * from consumption");
+//		while (rs2.next()) {
+//			System.out.println(
+//					rs2.getString(2) + " " + rs2.getString(3) + " " + rs2.getString(4) + " " + rs2.getString(5));
+//		}

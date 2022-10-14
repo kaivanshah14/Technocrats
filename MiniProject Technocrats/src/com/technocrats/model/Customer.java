@@ -86,8 +86,8 @@ public class Customer implements Serializable {
 //		this.numberofUnitsConsumed = numberofUnitsConsumed;
 //	}
 
-	public Customer(int customerId, String customerName, String customerAreaCode, String customerType, LocalDate month,
-			int numberofUnitsConsumed) {
+	public Customer(int customerId, String customerName, String customerType, String customerAreaCode, LocalDate month,
+			int numberofUnitsConsumed, double totalBill) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -95,6 +95,7 @@ public class Customer implements Serializable {
 		this.numberofUnitsConsumed = numberofUnitsConsumed;
 		this.customerType = customerType;
 		this.month = month;
+		this.totalBill = totalBill;
 	}
 	
 	
