@@ -1,10 +1,19 @@
 package com.technocrats.application.model;
 
-import java.time.LocalDateTime;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.ForeignKey;
 
 @Entity
 public class Consumption {
@@ -13,7 +22,17 @@ public class Consumption {
 	private int billId;
 	private int numberofUnitsConsumed;
 	private double totalBill;
-	private LocalDateTime month;
+	private String month;
+	@JoinColumn(name="customer.customerId")
+	private int customerId;
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
 
 	public Consumption() {
 		super();
@@ -23,12 +42,6 @@ public class Consumption {
 	public boolean equals(Object obj) {
 		Consumption c = (Consumption) obj;
 		return this.billId == c.billId;
-	}
-
-	@Override
-	public String toString() {
-		return "Consumption [billId=" + billId + ", numberofUnitsConsumed=" + numberofUnitsConsumed + ", totalBill="
-				+ totalBill + ", month=" + month + "]";
 	}
 
 	public int getBillId() {
@@ -43,7 +56,7 @@ public class Consumption {
 		return totalBill;
 	}
 
-	public LocalDateTime getMonth() {
+	public String getMonth() {
 		return month;
 	}
 
@@ -55,19 +68,35 @@ public class Consumption {
 		this.numberofUnitsConsumed = numberofUnitsConsumed;
 	}
 
-	public void setTotalBill(double totalBill) {
+	public void setTotalBill(double totalBill) throws CustomerException {
+		if (numberofUnitsConsumed < 0) {
+			throw new CustomerException();
+		}
+		else if (numberofUnitsConsumed >= 0 && numberofUnitsConsumed <= 100) {
+			totalBill = numberofUnitsConsumed * 0.5;
+		} else if (100 < numberofUnitsConsumed && numberofUnitsConsumed <= 150) {
+			totalBill = 100 * 0.5 + (numberofUnitsConsumed - 100) * 0.75;
+		} else {
+			totalBill = 100 * 0.5 + 50 * 0.75 + (numberofUnitsConsumed - 150) * 1;
+		}
 		this.totalBill = totalBill;
 	}
 
-	public void setMonth(LocalDateTime month) {
+	public void setMonth(String month) {
 		this.month = month;
 	}
 
-	public Consumption(int billId, int numberofUnitsConsumed, double totalBill, LocalDateTime month) {
+	public Consumption(int billId, int numberofUnitsConsumed, String month) throws CustomerException {
 		super();
 		this.billId = billId;
 		this.numberofUnitsConsumed = numberofUnitsConsumed;
-		this.totalBill = totalBill;
+		this.setTotalBill(numberofUnitsConsumed);
 		this.month = month;
+	}
+
+	@Override
+	public String toString() {
+		return "Consumption [billId=" + billId + ", numberofUnitsConsumed=" + numberofUnitsConsumed + ", totalBill="
+				+ totalBill + ", month=" + month + "]";
 	}
 }

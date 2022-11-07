@@ -1,9 +1,14 @@
 package com.technocrats.application.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Customer {
@@ -12,9 +17,20 @@ public class Customer {
 	private String customerName;
 	private String customerAreaCode;
 	private String customerType;
+	
+//    @OneToMany(targetEntity = Consumption.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name="customerId", referencedColumnName = "customerId")
+//    private List<Consumption> bill;
+	
 	public Customer() {
 		super();
 	}
+//	public List<Consumption> getBill() {
+//		return bill;
+//	}
+//	public void setBill(List<Consumption> bill) {
+//		this.bill = bill;
+//	}
 	public Customer(int customerId, String customerName, String customerAreaCode, String customerType) {
 		super();
 		this.customerId = customerId;

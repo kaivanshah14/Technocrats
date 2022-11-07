@@ -23,7 +23,7 @@ public class CustomerService {
 	}
 
 	public List<Customer> getAllCustomers() {
-		return customerRepository.findAll();
+		return  customerRepository.findAll();
 	}
 
 	public Customer addCustomer(Customer customer) {
