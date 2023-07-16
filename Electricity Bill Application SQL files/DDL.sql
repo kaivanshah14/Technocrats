@@ -19,3 +19,5 @@ totalbill decimal(8,2),
 customer_id int NOT NULL, 
 foreign key(customer_id) references customer(id)
 );
+
+-- this query is to create customer and consumption tables
